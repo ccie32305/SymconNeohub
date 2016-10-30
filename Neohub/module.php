@@ -15,8 +15,11 @@ class Neohub extends IPSModule
 
 	    // Heizungsgruppe erstellen
 	    $CatID = IPS_CreateCategory();       // Kategorie anlegen
-IPS_SetName($CatID, "Heizung"); // Kategorie benennen
+            IPS_SetName($CatID, "Heizung"); // Kategorie benennen
 
+$InsID = IPS_CreateInstance($ModulID);
+IPS_SetName($InsID, "1. Thermostat"); // Instanz benennen
+IPS_SetParent($InsID, $CatID); // Instanz einsortieren unter der Kategorie "Heizung"
 
     }
 }
