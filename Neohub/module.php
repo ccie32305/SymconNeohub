@@ -14,4 +14,5 @@ class Neohub extends IPSModule
 		$this->RegisterPropertyInteger("PortDoorbell", 80);
 
     }
+}
 ?>
