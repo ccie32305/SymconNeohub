@@ -1,15 +1,17 @@
 <?
-    // Klassendefinition
-    class Neohub extends IPSModule {
-        /**
-        * Die folgenden Funktionen stehen automatisch zur Verfügung, wenn das Modul über die "Module Control" eingefügt wurden.
-        * Die Funktionen werden, mit dem selbst eingerichteten Prefix, in PHP und JSON-RPC wiefolgt zur Verfügung gestellt:
-        *
-        * ABC_MeineErsteEigeneFunktion($id);
-        *
-        */
-        public function MeineErsteEigeneFunktion() {
-            echo $this->InstanceID;
-        }
+// Modul für Doorbird
+class Neohub extends IPSModule
+{
+    public function Create()
+    {
+//Never delete this line!
+        parent::Create();
+		
+		//These lines are parsed on Symcon Startup or Instance creation
+        //You cannot use variables here. Just static values.
+		
+        $this->RegisterPropertyString("Host", "");
+		$this->RegisterPropertyInteger("PortDoorbell", 80);
+
     }
 ?>
