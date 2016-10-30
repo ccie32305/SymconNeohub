@@ -10,8 +10,10 @@ class Neohub extends IPSModule
 		//These lines are parsed on Symcon Startup or Instance creation
         //You cannot use variables here. Just static values.
 		
-        $this->RegisterPropertyString("Host", "");
-		$this->RegisterPropertyInteger("PortDoorbell", 80);
+   		 $this->RegisterPropertyString("IP", ""); 
+	        $this->RegisterPropertyString("Port", "4242"); 
+
+
 
     }
 }
