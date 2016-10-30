@@ -13,6 +13,9 @@ class Neohub extends IPSModule
    		 $this->RegisterPropertyString("IP", ""); 
 	        $this->RegisterPropertyString("Port", "4242"); 
 
+	    // Heizungsgruppe erstellen
+	    $CatID = IPS_CreateCategory();       // Kategorie anlegen
+IPS_SetName($CatID, "Heizung"); // Kategorie benennen
 
 
     }
