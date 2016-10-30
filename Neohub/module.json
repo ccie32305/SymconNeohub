@@ -1,0 +1,15 @@
+{
+    "id": "{BF0DB279-6AEC-448B-9E5F-1BBE464B5C1A}",
+    "name": "Neohub",
+    "type": 1,
+    "vendor": "",
+    "aliases":
+    [
+        "NeoHub",
+        "NeoStat"
+    ],  
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "Neohub"
+}
