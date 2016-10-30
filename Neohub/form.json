@@ -1,0 +1,17 @@
+{
+    "elements":
+    [
+        { "type": "ValidationTextBox", "name": "IP", "caption": "IP" },
+        { "type": "ValidationTextBox", "name": "Port", "caption": "Port" }
+    ],
+    "actions":
+    [
+        { "type": "Button", "label": "Test connection", "onClick": "Neohub_TestConnect($ip,$port);" }
+    ],
+    "status":
+    [
+        { "code": 102, "icon": "active", "caption": "Connection successful" },
+        { "code": 201, "icon": "error", "caption": "Connection failed" },
+        { "code": 202, "icon": "error", "caption": "Connection failed" }
+    ]
+}
