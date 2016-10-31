@@ -4,10 +4,10 @@
 	"type": 3,
 	"vendor": "",
 	"aliases": [
-		"NeoStat"
+		"NeoHub"
 	],
-	"parentRequirements": ["{BF0DB279-6AEC-448B-9E5F-1BBE464B5C1A}"],
+	"parentRequirements": ["{06164dac-3656-4f47-bfb4-1defae737905}"],
 	"childRequirements": [],
-	"implemented": [],
-	"prefix": "NeoStat"
+	"implemented": ["{a0904693-6a83-4f81-aeff-f73eb66937e5}"],
+	"prefix": "Neohub"
 }
