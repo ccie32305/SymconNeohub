@@ -27,5 +27,11 @@ IPS_SetParent($InsID, $CatID); // Instanz einsortieren unter der Kategorie "Heiz
             parent::ApplyChanges();
         }
  
+	
+	public function Neohub_TestConnect($ip,$port)
+	{
+		print $ip.":".$port."\n";
+		return 102;
+	}
 }
 ?>
