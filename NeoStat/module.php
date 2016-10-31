@@ -1,4 +1,4 @@
-<?
+	<?
 // NeoStat Smart Thermostat Module
 class NeoStat extends IPSModule
 {
@@ -13,5 +13,6 @@ class NeoStat extends IPSModule
    		 $this->RegisterPropertyString("Name", ""); ; 
 
 
+      }
 }
 ?>
