@@ -1,5 +1,5 @@
 <?
-// Modul für Doorbird
+// Neohub Smart Thermostat Module
 class Neohub extends IPSModule
 {
     public function Create()
