@@ -10,6 +10,7 @@
     ],
     "status":
     [
+        { "code": 101, "icon": "active", "caption": "Status 101" },
         { "code": 102, "icon": "active", "caption": "Connection successful" },
         { "code": 201, "icon": "error", "caption": "Connection failed" },
         { "code": 202, "icon": "error", "caption": "Connection failed" }
