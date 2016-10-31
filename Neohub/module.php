@@ -22,5 +22,10 @@ IPS_SetName($InsID, "1. Thermostat"); // Instanz benennen
 IPS_SetParent($InsID, $CatID); // Instanz einsortieren unter der Kategorie "Heizung"
 */
     }
+	        public function ApplyChanges() {
+            // Diese Zeile nicht löschen
+            parent::ApplyChanges();
+        }
+ 
 }
 ?>
