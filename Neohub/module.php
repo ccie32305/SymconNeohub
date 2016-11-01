@@ -2,13 +2,14 @@
 // Neohub Smart Thermostat Module
 class Neohub extends IPSModule
 {
-    public function Create()
-    {
-//Never delete this line!
 	private $NeohubIP = "";
 	private $NeohubPort = "";
 	private $NeohubUpdateInterval = "";
 	    
+    public function Create()
+    {
+//Never delete this line!
+
         parent::Create();
 		
 		//These lines are parsed on Symcon Startup or Instance creation
