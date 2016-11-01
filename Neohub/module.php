@@ -111,7 +111,9 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 		}
 		else
 		{
+			/*
 			$this->SetStatus(101);
+			*/
 		}
 	}
 	        ########## public functions ##########
