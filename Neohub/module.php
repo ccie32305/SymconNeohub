@@ -121,8 +121,11 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	 * 	Neohub_TestConnect(string $NeohubIP,integer $NeohubPort)
 	 *		updates the state of all SmartStat
 	 */
-	public function TestConnect(string $NeohubIP,integer $NeohubPort) 
+	public function TestConnect() 
 	{
+	$NeohubIP = $this->ReadPropertyString("NeohubIP");
+	$NeohubPort = $this->ReadPropertyString("NeohubPort");
+				
 	$NeohubData='{"INFO":0}'.chr(0);
 	$NeohubSocket=pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5); 
 	fputs($NeohubSocket,$NeohubData);
