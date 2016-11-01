@@ -40,6 +40,7 @@ IPS_SetParent($InsID, $CatID); // Instanz einsortieren unter der Kategorie "Heiz
 
 protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterval)
 	{
+	IPS_LogMessage("Neohub", "Timer läuft");
 		$NeohubInstanceId = $this->InstanceID;
    	$InstanceId = @IPS_GetObjectIDByIdent($UpdateTimerName, $NeohubInstanceId);
 		if ($InstanceId && IPS_GetEvent($InstanceId)['EventType'] <> 1) {
