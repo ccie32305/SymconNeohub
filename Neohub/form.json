@@ -6,7 +6,7 @@
     ],
     "actions":
     [
-        { "type": "Button", "label": "Test connection", "onClick": "Neohub_TestConnect($NeohubIP,$NeohubPort);" }
+        { "type": "Button", "label": "Test connection", "onClick": "Neohub_TestConnect();" }
     ],
     "status":
     [
