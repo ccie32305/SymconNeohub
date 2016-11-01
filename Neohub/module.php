@@ -122,10 +122,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	 *		updates the state of all SmartStat
 	 */
 	public function TestConnect() 
-	{
-	private $NeohubIP;
-	private $NeohubPort;
-		
+	{	
 	$NeohubIP = $this->ReadPropertyString("NeohubIP");
 	$NeohubPort = $this->ReadPropertyString("NeohubPort");
 			IPS_LogMessage("Neohub", "IP:".$NeohubIP);
