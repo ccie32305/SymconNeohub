@@ -53,7 +53,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
     	}
     	IPS_SetName($InstanceId, $UpdateTimerName);
     	IPS_SetHidden($InstanceId, true);
-    	IPS_SetEventScript($InstanceId, "\$InstanceId = {$BridgeInstanceId};\nNeohub_updateStateOfSmartLocks($NeohubInstanceId);");
+    	IPS_SetEventScript($InstanceId, "\$InstanceId = {$NeohubInstanceId};\nNeohub_updateStateOfSmartLocks($NeohubInstanceId);");
     	if (!IPS_EventExists($InstanceId)) {
     		IPS_LogMessage("Neohub", "Ident with name $UpdateTimerName is used for wrong object type");
     	}	
