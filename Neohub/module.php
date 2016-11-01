@@ -109,7 +109,8 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 		if ($this->ReadPropertyString("NeohubIP") == "" || $this->ReadPropertyString("NeohubPort") == "" ) {
 			$this->SetStatus(201);
 		}
-		else{
+		else
+		{
 			$this->SetStatus(101);
 		}
 	}
