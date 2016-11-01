@@ -1,17 +1,24 @@
 {
-    "elements":
-    [
-        { "type": "ValidationTextBox", "name": "Name", "caption": "Thermostat Name" },
-    ],
-    "actions":
-    [
-        { "type": "Button", "label": "Check availabiliy", "onClick": "NeoStat_AvailabilityCheck($name);" }
-    ],
-    "status":
-    [
-        { "code": 101, "icon": "active", "caption": "Status 101" },
-        { "code": 102, "icon": "active", "caption": "Connection successful" },
-        { "code": 201, "icon": "error", "caption": "Connection failed" },
-        { "code": 202, "icon": "error", "caption": "Connection failed" }
-    ]
+	"elements":
+	[
+		{ "type": "Label", "label": "NeoStat Konfiguration Version 1.00"},
+		{ "type": "Label", "label": " "},
+		{ "type": "ValidationTextBox", "name": "NeoStatName", "caption": "NeoStat Name" },
+    	{ "type": "CheckBox", "name": "HideNeoStatSwitch", "caption": "Schalter verbergen" }
+	],
+	"actions":
+	[
+        	{ "type": "Button", "label": "Check availabiliy", "onClick": "NeoStat_AvailabilityCheck($name);" }
+		{ "type": "Label", "label": "NeoStat" },
+		{ "type": "Button", "label": "Status anzeigen", "onClick": "$NeoStatState=NeoStat_showLockStateOfNeoStat($id);" },
+	],
+	"status": 
+	[
+		{ "code": 101, "icon": "active", "caption": "NeoStat wird erstellt." },
+		{ "code": 102, "icon": "active", "caption": "NeoStat ist aktiv." },
+		{ "code": 103, "icon": "active", "caption": "NeoStat wird gelöscht." },
+		{ "code": 104, "icon": "inactive", "caption": "NeoStat ist inaktiv." },
+		{ "code": 201, "icon": "error", "caption": "NeoStat Konfiguration ist fehlerhaft." },
+		{ "code": 299, "icon": "error", "caption": "Es ist ein unbekannter Fehler aufgetreten." }
+  ]
 }
