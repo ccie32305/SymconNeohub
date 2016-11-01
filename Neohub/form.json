@@ -1,8 +1,8 @@
 {
     "elements":
     [
-        { "type": "ValidationTextBox", "name": "IP", "caption": "IP" },
-        { "type": "ValidationTextBox", "name": "Port", "caption": "Port" }
+        { "type": "ValidationTextBox", "name": "NeohubIP", "caption": "IP" },
+        { "type": "ValidationTextBox", "name": "NeohubPort", "caption": "Port" }
     ],
     "actions":
     [
@@ -12,7 +12,7 @@
     [
         { "code": 101, "icon": "active", "caption": "Status 101" },
         { "code": 102, "icon": "active", "caption": "Connection successful" },
-        { "code": 201, "icon": "error", "caption": "Connection failed" },
+        { "code": 201, "icon": "error", "caption": "No valid IP/Port" },
         { "code": 202, "icon": "error", "caption": "Connection failed" }
     ]
 }
