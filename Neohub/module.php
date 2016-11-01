@@ -82,7 +82,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 		$NeohubInstanceId = $this->InstanceID;
 		$NeoStatInstanceIds = IPS_GetInstanceListByModuleID($this->getNeoStatModuleGuid());
 		foreach($NeoStatInstanceIds as $NeoStatInstanceId) {
-	    		if(IPS_GetInstance($NeoStatInstanceId)['ConnectionID'] == $NukiBridgeInstanceId) {
+	    		if(IPS_GetInstance($NeoStatInstanceId)['ConnectionID'] == $NeohubInstanceId) {
 	      			$NeoStatUniqueId = IPS_GetProperty($NeoStatInstanceId, "NeoStatName");
 				$NeoStatData = $this->getStateOfNeoStat($NeoStatUniqueId);
 				$current_temperature = $NeoStatkData["current_temperature"];
