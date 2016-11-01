@@ -30,10 +30,9 @@ IPS_SetParent($InsID, $CatID); // Instanz einsortieren unter der Kategorie "Heiz
 	        public function ApplyChanges() {
             // Diese Zeile nicht löschen
             parent::ApplyChanges();
-        }
 		$this->registerUpdateTimer("Update", $this->ReadPropertyInteger("NeohubUpdateInterval"));
 		$this->validateNeohubConfiguration();
-}
+	}
 	########## private functions ##########
 	/**
 	 *		register the update timer
@@ -113,4 +112,5 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 			$this->SetStatus(102);
 		}
 	}
+}
 ?>
