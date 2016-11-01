@@ -113,5 +113,27 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 			$this->SetStatus(102);
 		}
 	}
+	        ########## public functions ##########
+	/**
+	 * 	Neohub_TestConnect(string $NeohubIP,integer $NeohubPort)
+	 *		updates the state of all SmartStat
+	 */
+	public function TestConnect(string $NeohubIP,integer $NeohubPort) 
+	{
+	$NeohubData='{"INFO":0}'.chr(0);
+	$NeohubSocket=pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5); 
+	fputs($NeohubSocket,$NeohubData);
+	$NeohubJSON=fgets($NeohubSocket, 64000); 
+	fclose($NeohubSocket);
+	$NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubJSON,JSON_HEX_QUOT)); 
+	if(!empty(json_decode($NeohubJSON)))
+		{
+			$this->SetStatus(101);
+		}
+			else
+		{
+			$this->SetStatus(202);
+		}
+	  }
 }
 ?>
