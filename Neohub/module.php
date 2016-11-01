@@ -5,6 +5,10 @@ class Neohub extends IPSModule
     public function Create()
     {
 //Never delete this line!
+	private $NeohubIP = "";
+	private $NeohubPort = "";
+	private $NeohubUpdateInterval = "";
+	    
         parent::Create();
 		
 		//These lines are parsed on Symcon Startup or Instance creation
