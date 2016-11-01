@@ -106,7 +106,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	private function validateNeohubConfiguration()
 	{
 		if ($this->ReadPropertyString("NeohubIP") == "" || $this->ReadPropertyString("NeohubPort") == "" ) {
-			$this->SetStatus(104);
+			$this->SetStatus(201);
 		}
 		else{
 			$this->SetStatus(102);
