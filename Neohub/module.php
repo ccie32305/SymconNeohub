@@ -110,7 +110,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 			$this->SetStatus(201);
 		}
 		else{
-			$this->SetStatus(102);
+			$this->SetStatus(101);
 		}
 	}
 	        ########## public functions ##########
@@ -128,7 +128,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	$NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubJSON,JSON_HEX_QUOT)); 
 	if(!empty(json_decode($NeohubJSON)))
 		{
-			$this->SetStatus(101);
+			$this->SetStatus(102);
 		}
 			else
 		{
