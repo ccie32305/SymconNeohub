@@ -49,7 +49,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
     	}
     	IPS_SetName($InstanceId, $UpdateTimerName);
     	IPS_SetHidden($InstanceId, true);
-    	IPS_SetEventScript($InstanceId, "\$InstanceId = {$BridgeInstanceId};\nNUKI_updateStateOfSmartLocks($NeohubInstanceId);");
+    	IPS_SetEventScript($InstanceId, "\$InstanceId = {$BridgeInstanceId};\nNeohub_updateStateOfSmartLocks($NeohubInstanceId);");
     	if (!IPS_EventExists($InstanceId)) {
     		IPS_LogMessage("Neohub", "Ident with name $UpdateTimerName is used for wrong object type");
     	}	
@@ -62,7 +62,38 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
       	IPS_SetEventActive($InstanceId, true);
     	}
     }
+	
+        ########## public functions ##########
+       /**
+	*		gets the guid of the smartlock module
+	*/
+	private function getNeoStatModuleGuid()
+	{
+		return "{0584cfea-43dd-4df8-a46e-f3198ba3d29b}";
+	}
 
+        ########## public functions ##########
+	/**
+	 * 	Neohub_updateStateOfNeoStats(int $NeohubInstanceID)
+	 *		updates the state of all SmartStat
+	 */
+	public function updateStateOfSmartLocks() 
+	{
+		$NeohubInstanceId = $this->InstanceID;
+		$NeoStatInstanceIds = IPS_GetInstanceListByModuleID($this->getNeoStatModuleGuid());
+		foreach($NeoStatInstanceIds as $NeoStatInstanceId) {
+	    		if(IPS_GetInstance($NeoStatInstanceId)['ConnectionID'] == $NukiBridgeInstanceId) {
+	      			$NeoStatUniqueId = IPS_GetProperty($NeoStatInstanceId, "NeoStatName");
+				$NeoStatData = $this->getStateOfNeoStat($NeoStatUniqueId);
+				$current_temperature = $NeoStatkData["current_temperature"];
+				$current_set_temperature = $NeoStatData["current_set_temperature"];
+				$NeoStatCurrentTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentTemperature", $NeoStatInstanceId);
+				$UpdateNeoStatCurrentTemperature = SetValue($NeoStatCurrentTemperatureObjectId, $current_temperature);
+				$NeoStatCurrentSetTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentSetTemperature", $NeoStatInstanceId);
+				$UpdateNeoStatCurrentSetTemperature = SetValue($NeoStatCurrentSetTemperatureObjectId, $current_set_temperature);
+			}
+		}
+  	}
 
 	########## private functions ##########
 	/**
