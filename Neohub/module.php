@@ -123,9 +123,13 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	 */
 	public function TestConnect() 
 	{
+	private $NeohubIP;
+	private $NeohubPort;
+		
 	$NeohubIP = $this->ReadPropertyString("NeohubIP");
 	$NeohubPort = $this->ReadPropertyString("NeohubPort");
-				
+			IPS_LogMessage("Neohub", "IP:".$NeohubIP);
+				IPS_LogMessage("Neohub", "Port:".$NeohubPort);
 	$NeohubData='{"INFO":0}'.chr(0);
 	$NeohubSocket=pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5); 
 	fputs($NeohubSocket,$NeohubData);
