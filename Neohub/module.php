@@ -123,7 +123,6 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	 */
 	public function TestConnect() 
 	{	
-	string $NeohubJSON;
 	$NeohubIP = $this->ReadPropertyString('NeohubIP');
 			$NeohubPort = $this->ReadPropertyString('NeohubPort');
 			
@@ -134,6 +133,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	fputs($NeohubSocket,$NeohubData);
 	$NeohubJSON=fgets($NeohubSocket, 64000); 
 	fclose($NeohubSocket);
+		settype($NeohubJSON, "string");
 		IPS_LogMessage("Neohub",$NeohubJSON);
 	$NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubJSON,JSON_HEX_QUOT)); 
 	if(!empty(json_decode($NeohubJSON)))
