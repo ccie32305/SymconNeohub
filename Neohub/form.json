@@ -6,7 +6,7 @@
     ],
     "actions":
     [
-        { "type": "Button", "label": "Test connection", "onClick": "Neohub_TestConnect($id);" }
+        { "type": "Button", "label": "Test connection", "onClick": "Neohub_TestConnect();" }
     ],
     "status":
     [
