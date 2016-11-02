@@ -81,7 +81,7 @@ class Neohub extends IPSModule
 	 * 	Neohub_updateStateOfNeoStats(int $NeohubInstanceID)
 	 *		updates the state of all SmartStat
 	 */
-	public function updateStateOfSmartLocks() 
+	public function updateNeoStats() 
 	{
 		$NeohubInstanceId = $this->InstanceID;
 		$NeoStatInstanceIds = IPS_GetInstanceListByModuleID($this->getNeoStatModuleGuid());
