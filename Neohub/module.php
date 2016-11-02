@@ -133,7 +133,6 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 		$NeohubReply=@fgets($NeohubSocket, 64000);
 		@fclose($NeohubSocket);
 	        $NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubReply,JSON_HEX_QUOT));
-		print_r($NeohubJSON);
 		if(!$NeohubJSON == NULL)
 		{
 			$this->SetStatus(102);
