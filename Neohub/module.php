@@ -50,7 +50,7 @@ class Neohub extends IPSModule
     	}
     	IPS_SetName($InstanceId, $UpdateTimerName);
     	IPS_SetHidden($InstanceId, true);
-    	IPS_SetEventScript($InstanceId, "\$InstanceId = {$NeohubInstanceId};\nNeohub_updateStateOfSmartLocks($NeohubInstanceId);");
+    	IPS_SetEventScript($InstanceId, "\$InstanceId = {$NeohubInstanceId};\nNeohub_updateNeoStats($NeohubInstanceId);");
     	if (!IPS_EventExists($InstanceId)) 
 	{
     		IPS_LogMessage("Neohub", "Ident with name $UpdateTimerName is used for wrong object type");
