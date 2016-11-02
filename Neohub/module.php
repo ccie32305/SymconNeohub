@@ -121,8 +121,9 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	 * 	Neohub_TestConnect(string $NeohubIP,integer $NeohubPort)
 	 *		updates the state of all SmartStat
 	 */
-	public function TestConnect(string $NeohubIP, integer $NeohubPort) 
+	public function TestConnect(integer $id) 
 	{	
+	
 			IPS_LogMessage("Neohub", "IP:".$NeohubIP);
 				IPS_LogMessage("Neohub", "Port:".$NeohubPort);
 	$NeohubData='{"INFO":0}'.chr(0);
