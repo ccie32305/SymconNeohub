@@ -123,7 +123,7 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	 */
 	public function TestConnect() 
 	{	
-	
+	string $NeohubJSON;
 	$NeohubIP = $this->ReadPropertyString('NeohubIP');
 			$NeohubPort = $this->ReadPropertyString('NeohubPort');
 			
