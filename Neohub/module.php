@@ -123,8 +123,10 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	 */
 	public function TestConnect() 
 	{	
+		/*
 	$NeohubIP = $this->ReadPropertyString('NeohubIP');
 			$NeohubPort = $this->ReadPropertyString('NeohubPort');
+			*/
 			IPS_LogMessage("Neohub", "IP:".$NeohubIP);
 				IPS_LogMessage("Neohub", "Port:".$NeohubPort);
 	$NeohubData='{"INFO":0}'.chr(0);
