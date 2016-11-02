@@ -123,27 +123,25 @@ protected function registerUpdateTimer(string $UpdateTimerName, int $TimerInterv
 	 */
 	public function TestConnect() 
 	{	
-	$NeohubIP = $this->ReadPropertyString('NeohubIP');
-			$NeohubPort = $this->ReadPropertyString('NeohubPort');
-			
-			IPS_LogMessage("Neohub", "IP:".$NeohubIP);
-				IPS_LogMessage("Neohub", "Port:".$NeohubPort);
-	$NeohubData='{"INFO":0}'.chr(0);
-	$NeohubSocket=pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5); 
-	fputs($NeohubSocket,$NeohubData);
-	$NeohubJSON=fgets($NeohubSocket, 64000); 
-	fclose($NeohubSocket);
-		settype($NeohubJSON, "string");
-		IPS_LogMessage("Neohub",$NeohubJSON);
-	$NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubJSON,JSON_HEX_QUOT)); 
-	if(!empty(json_decode($NeohubJSON)))
+		$NeohubIP = $this->ReadPropertyString('NeohubIP');
+		$NeohubPort = $this->ReadPropertyString('NeohubPort');
+		IPS_LogMessage("Neohub", "IP:".$NeohubIP);
+		IPS_LogMessage("Neohub", "Port:".$NeohubPort);
+		$NeohubData='{"INFO":0}'.chr(0);
+		$NeohubSocket=@pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5);
+		@fputs($NeohubSocket,$NeohubData);
+		$NeohubReply=@fgets($NeohubSocket, 64000);
+		@fclose($NeohubSocket);
+	        $NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubReply,JSON_HEX_QUOT));
+		print_r($NeohubJSON);
+		if(!$NeohubJSON == NULL)
 		{
 			$this->SetStatus(102);
 		}
-			else
+		else
 		{
 			$this->SetStatus(202);
 		}
-	  }
+	}
 }
 ?>
