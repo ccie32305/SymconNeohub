@@ -122,6 +122,23 @@ class Neohub extends IPSModule
 	 */
 	public function TestConnect() 
 	{	
+		$NeohubJSON = GetInfo();
+		if(!$NeohubJSON == NULL)
+		{
+			$this->SetStatus(102);
+		}
+		else
+		{
+			$this->SetStatus(202);
+		}
+	}
+	
+	############### private functions ###########
+	/**
+	*	Neohub_GetInfo()
+	*		retrieve {INFO:0} API Call from NeoHub
+	*/
+	private function GetInfo()
 		$NeohubIP = $this->ReadPropertyString('NeohubIP');
 		$NeohubPort = $this->ReadPropertyString('NeohubPort');
 		IPS_LogMessage("Neohub", "IP:".$NeohubIP);
@@ -132,14 +149,6 @@ class Neohub extends IPSModule
 		$NeohubReply=@fgets($NeohubSocket, 64000);
 		@fclose($NeohubSocket);
 	        $NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubReply,JSON_HEX_QUOT));
-		if(!$NeohubJSON == NULL)
-		{
-			$this->SetStatus(102);
-		}
-		else
-		{
-			$this->SetStatus(202);
-		}
-	}
+		return $NeohubJSON;
 }
 ?>
