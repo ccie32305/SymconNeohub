@@ -18,16 +18,18 @@ class NeoStat extends IPSModule
 	public function ApplyChanges()
 	{
 		parent::ApplyChanges();
+		
+		$this->ConnectParent("{8a53a5ff-19b8-4f26-973e-dedc3921d49a}");
 		/*
-		$this->ConnectParent("{B41AE29B-39C1-4144-878F-94C0F7EEC725}");
 		$SmartLockSwitchObjectId = $this->RegisterVariableBoolean("NUKISmartLockSwitch", "NUKI SmartLock", "~Lock", 1);
 		$this->EnableAction("NUKISmartLockSwitch");
 		$HideSmartLockSwitchState = $this->ReadPropertyBoolean("HideSmartLockSwitch");
 		IPS_SetHidden($SmartLockSwitchObjectId, $HideSmartLockSwitchState);
 		
 		$this->RegisterVariableString("NUKISmatLockStatus","NUKI SmartLock Status", "", 2);
-		$this->SetStatus(102);
 		*/
+		$this->SetStatus(102);
+		
 	}
 
 }
