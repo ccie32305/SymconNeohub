@@ -2,13 +2,11 @@
 	"elements":
 	[
 		{ "type": "Label", "label": "NeoStat Konfiguration Version 1.00"},
-		{ "type": "ValidationTextBox", "name": "NeoStatName", "caption": "NeoStat Name" }
     	
 	],
 	"actions":
 	[
         	{ "type": "Button", "label": "Check availabiliy", "onClick": "NeoStat_AvailabilityCheck($name);" },
-		{ "type": "Label", "label": "NeoStat" },
 		{ "type": "Button", "label": "Status anzeigen", "onClick": "$NeoStatState=NeoStat_showLockStateOfNeoStat($id);" }
 	],
 	"status": 
