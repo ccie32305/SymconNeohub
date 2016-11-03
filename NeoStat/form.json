@@ -1,6 +1,7 @@
 {
 	"elements":
 	[
+		{ "type": "ValidationTextBox", "name": "NeoStatName", "caption": "NeoStat Name" },
 	],
 	"actions":
 	[
