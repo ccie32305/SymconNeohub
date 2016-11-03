@@ -13,7 +13,7 @@ class NeoStat extends IPSModule
 	    		    IPS_LogMessage($_IPS['SELF'], "before connect");	
 				$this->ConnectParent("{434a3a30-77cc-4a17-ab15-0d1f757d6bbf}");
 	    		    IPS_LogMessage($_IPS['SELF'], "after connect");	
-	    
+	    $this->RegisterPropertyString("NeoStatName","");
 		 $this->RegisterVariableFloat("current_temperature", "Current Temperature");
 		 $this->RegisterVariableFloat("current_set_temperature", "Current Set Temperature");
 		 $this->RegisterVariableBoolean("heating", "heating", "", 0);
