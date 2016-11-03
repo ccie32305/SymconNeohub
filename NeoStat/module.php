@@ -35,7 +35,7 @@ class NeoStat extends IPSModule
 		
 		$this->RegisterVariableString("NUKISmatLockStatus","NUKI SmartLock Status", "", 2);
 		*/
-
+		$this->SetStatus(102);
 		
 	}
 
