@@ -21,7 +21,7 @@ class NeoStat extends IPSModule
 	public function ApplyChanges()
 	{
 		parent::ApplyChanges();
-		$this->SetStatus(102);
+		$this->SetStatus(101);
 		
 	}
 
