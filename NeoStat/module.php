@@ -14,5 +14,21 @@ class NeoStat extends IPSModule
 		 $this->RegisterVariableFloat("current_set_temperature", "Current Set Temperature");
 		 $this->RegisterVariableBoolean("heating", "Heating");
       }
+	
+	public function ApplyChanges()
+	{
+		parent::ApplyChanges();
+		/*
+		$this->ConnectParent("{B41AE29B-39C1-4144-878F-94C0F7EEC725}");
+		$SmartLockSwitchObjectId = $this->RegisterVariableBoolean("NUKISmartLockSwitch", "NUKI SmartLock", "~Lock", 1);
+		$this->EnableAction("NUKISmartLockSwitch");
+		$HideSmartLockSwitchState = $this->ReadPropertyBoolean("HideSmartLockSwitch");
+		IPS_SetHidden($SmartLockSwitchObjectId, $HideSmartLockSwitchState);
+		
+		$this->RegisterVariableString("NUKISmatLockStatus","NUKI SmartLock Status", "", 2);
+		$this->SetStatus(102);
+		*/
+	}
+
 }
 ?>
