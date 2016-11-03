@@ -2,9 +2,9 @@
 	"id": "{434a3a30-77cc-4a17-ab15-0d1f757d6bbf}",
 	"name": "Neohub",
 	"type": 1,
-	"vendor": "",
+	"vendor": "Heatmiser",
 	"aliases": [
-		"NeoHub"
+		"NeoHub Hub"
 	],
 	"parentRequirements": [],
 	"childRequirements": ["{1b4d143d-9003-42c2-9262-0a02a3c28787}"],
