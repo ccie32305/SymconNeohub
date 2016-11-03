@@ -110,9 +110,9 @@ class Neohub extends IPSModule
 		}
 		else
 		{
-			
+			/* throws error while validate
 			$this->SetStatus(101);
-			
+			*/
 		}
 	}
 	########## public functions ##########
@@ -122,7 +122,7 @@ class Neohub extends IPSModule
 	 */
 	public function TestConnect() 
 	{	
-		$NeohubJSON = Neohub_GetInfo();
+		$NeohubJSON = $this->GetInfo();
 		if(!$NeohubJSON == NULL)
 		{
 			$this->SetStatus(102);
