@@ -9,7 +9,7 @@ class NeoStat extends IPSModule
 		
 		//These lines are parsed on Symcon Startup or Instance creation
         //You cannot use variables here. Just static values.
-		
+				$this->ConnectParent("{8a53a5ff-19b8-4f26-973e-dedc3921d49a}");
 		 $this->RegisterVariableFloat("current_temperature", "Current Temperature");
 		 $this->RegisterVariableFloat("current_set_temperature", "Current Set Temperature");
 		 $this->RegisterVariableBoolean("heating", "Heating");
