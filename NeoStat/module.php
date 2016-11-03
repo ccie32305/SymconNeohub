@@ -24,6 +24,12 @@ class NeoStat extends IPSModule
 		parent::ApplyChanges();
 		
 	}
+	
+	public function AvailabilityCheck()
+	{
+		//Never delete this line!
+		
+	}
 
 }
 ?>
