@@ -6,7 +6,7 @@ class NeoStat extends IPSModule
     {
 //Never delete this line!
 	    IPS_LogMessage($_IPS['SELF'], "Before parent::create");
-   /*     parent::Create();*/
+        parent::Create();
 		    IPS_LogMessage($_IPS['SELF'], "after parent::create");	
 		//These lines are parsed on Symcon Startup or Instance creation
         //You cannot use variables here. Just static values.
