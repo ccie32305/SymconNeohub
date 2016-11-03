@@ -11,8 +11,9 @@ class NeoStat extends IPSModule
         //You cannot use variables here. Just static values.
 		
    		 $this->RegisterPropertyString("Name", ""); ; 
-
-
+		 $this->RegisterVariableFloat("current_temperature", "Current Temperature");
+		 $this->RegisterVariableFloat("current_set_temperature", "Current Set Temperature");
+		 $this->RegisterVariableBoolean("heating", "Heating");
       }
 }
 ?>
