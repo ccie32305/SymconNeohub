@@ -138,7 +138,8 @@ class Neohub extends IPSModule
 	*	Neohub_GetInfo()
 	*		retrieve {INFO:0} API Call from NeoHub
 	*/
-	public function GetInfo()
+	protected function GetInfo()
+	{
 		$NeohubIP = $this->ReadPropertyString('NeohubIP');
 		$NeohubPort = $this->ReadPropertyString('NeohubPort');
 		IPS_LogMessage("Neohub", "IP:".$NeohubIP);
@@ -150,5 +151,6 @@ class Neohub extends IPSModule
 		@fclose($NeohubSocket);
 	        $NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubReply,JSON_HEX_QUOT));
 		return $NeohubJSON;
+	}
 }
 ?>
