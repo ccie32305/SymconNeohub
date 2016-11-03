@@ -24,10 +24,10 @@ class Neohub extends IPSModule
 	{
         // Diese Zeile nicht löschen
         parent::ApplyChanges();
-		/*
+		
 	$this->registerUpdateTimer("Update", $this->ReadPropertyInteger("NeohubUpdateInterval"));
 	$this->validateNeohubConfiguration();
-	*/
+	
 	}
 	########## private functions ##########
 	/**
