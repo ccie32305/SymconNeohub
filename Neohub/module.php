@@ -110,9 +110,9 @@ class Neohub extends IPSModule
 		}
 		else
 		{
-			/*
+			
 			$this->SetStatus(101);
-			*/
+			
 		}
 	}
 	########## public functions ##########
@@ -122,7 +122,7 @@ class Neohub extends IPSModule
 	 */
 	public function TestConnect() 
 	{	
-		$NeohubJSON = GetInfo();
+		$NeohubJSON = Neohub_GetInfo();
 		if(!$NeohubJSON == NULL)
 		{
 			$this->SetStatus(102);
