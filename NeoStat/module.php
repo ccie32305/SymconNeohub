@@ -12,7 +12,8 @@ class NeoStat extends IPSModule
 				$this->ConnectParent("{434a3a30-77cc-4a17-ab15-0d1f757d6bbf}");
 		 $this->RegisterVariableFloat("current_temperature", "Current Temperature");
 		 $this->RegisterVariableFloat("current_set_temperature", "Current Set Temperature");
-		 $this->RegisterVariableBoolean("heating", "Heating");
+		 $this->RegisterVariableBoolean("heating");
+	    		$this->SetStatus(102);
       }
 	
 	public function ApplyChanges()
@@ -28,7 +29,7 @@ class NeoStat extends IPSModule
 		
 		$this->RegisterVariableString("NUKISmatLockStatus","NUKI SmartLock Status", "", 2);
 		*/
-		$this->SetStatus(102);
+
 		
 	}
 
