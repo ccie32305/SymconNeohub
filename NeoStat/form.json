@@ -1,12 +1,11 @@
 {
 	"elements":
 	[
-		{ "type": "ValidationTextBox", "name": "NeoStatName", "caption": "NeoStat Name" },
+		{ "type": "ValidationTextBox", "name": "NeoStatName", "caption": "NeoStat Name" }
 	],
 	"actions":
 	[
-        	{ "type": "Button", "label": "Check availabiliy", "onClick": "NeoStat_AvailabilityCheck($name);" },
-		{ "type": "Button", "label": "Status anzeigen", "onClick": "$NeoStatState=NeoStat_showLockStateOfNeoStat($id);" }
+        	{ "type": "Button", "label": "Check availabiliy", "onClick": "NeoStat_AvailabilityCheck($name);" }
 	],
 	"status": 
 	[
