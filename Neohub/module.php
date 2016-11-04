@@ -90,14 +90,8 @@ class Neohub extends IPSModule
 		foreach($NeoStatInstanceIds as $NeoStatInstanceId) {
 	    		if(IPS_GetInstance($NeoStatInstanceId)['ConnectionID'] == $NeohubInstanceId) {
 	      			$NeoStatUniqueId = IPS_GetProperty($NeoStatInstanceId, "NeoStatName");
-						IPS_LogMessage("$NeoStatUniqueId",$NeoStatUniqueId);
-				$NeoStatData = $this->getStateOfNeoStat($NeoStatUniqueId);
-				$current_temperature = $NeoStatData["current_temperature"];
-				$current_set_temperature = $NeoStatData["current_set_temperature"];
-				$NeoStatCurrentTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentTemperature", $NeoStatInstanceId);
-				$UpdateNeoStatCurrentTemperature = SetValue($NeoStatCurrentTemperatureObjectId, $current_temperature);
-				$NeoStatCurrentSetTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentSetTemperature", $NeoStatInstanceId);
-				$UpdateNeoStatCurrentSetTemperature = SetValue($NeoStatCurrentSetTemperatureObjectId, $current_set_temperature);
+				IPS_LogMessage("$NeoStatUniqueId",$NeoStatUniqueId);
+				$NeoStatData = $this->updateNeoStat($NeoStatUniqueId);
 			}
 		}
   	}
@@ -141,9 +135,24 @@ class Neohub extends IPSModule
 	*	Neohub_getStateOfNeoStat(string $NeoHubUniqueId)
 	*		retrieve infos for specific NeoStat
 	*/
-	private function getStateOfNeoStat(string $NeoHubUniqueId)
+	private function updateNeoStat(string $NeoHubUniqueId)
 	{
 		$NeoHubJSON = $this->GetInfo();
+		$NeoStats = $NeohubJSON['devices'];
+        	foreach($NeoStats as $NeoStat ) 
+		{
+        		if($NeoStat["device"] == "Wohnzimmer")
+        		{
+             			IPS_LogMessage("NeoStat:",$NeoStat["device"]);
+               			IPS_LogMessage("NeoStat_temp:",$NeoStat["CURRENT_TEMPERATURE"]);
+       			}
+        	}
+		$current_temperature = $NeoStatData["current_temperature"];
+		$current_set_temperature = $NeoStatData["current_set_temperature"];
+		$NeoStatCurrentTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentTemperature", $NeoStatInstanceId);
+		$UpdateNeoStatCurrentTemperature = SetValue($NeoStatCurrentTemperatureObjectId, $current_temperature);
+		$NeoStatCurrentSetTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentSetTemperature", $NeoStatInstanceId);
+		$UpdateNeoStatCurrentSetTemperature = SetValue($NeoStatCurrentSetTemperatureObjectId, $current_set_temperature);
 	}
 	
 	############### private functions ###########
