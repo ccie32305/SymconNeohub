@@ -140,7 +140,7 @@ class Neohub extends IPSModule
 		       			IPS_LogMessage("updateNeoStat",$NeoHubUniqueId);
 		
 		$NeoHubJSON = $this->GetInfo();
-		/*
+		
 		$NeoStats = $NeohubJSON['devices'];
         	foreach($NeoStats as $NeoStat ) 
 		{
@@ -156,7 +156,7 @@ class Neohub extends IPSModule
 		$UpdateNeoStatCurrentTemperature = SetValue($NeoStatCurrentTemperatureObjectId, $current_temperature);
 		$NeoStatCurrentSetTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentSetTemperature", $NeoStatInstanceId);
 		$UpdateNeoStatCurrentSetTemperature = SetValue($NeoStatCurrentSetTemperatureObjectId, $current_set_temperature);
-	*/
+	
 	}
 	
 	############### public functions ###########
