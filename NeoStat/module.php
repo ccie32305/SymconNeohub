@@ -15,6 +15,7 @@ class NeoStat extends IPSModule
 		 $this->RegisterVariableFloat("current_temperature", "Current Temperature");
 		 $this->RegisterVariableFloat("current_set_temperature", "Current Set Temperature");
 		 $this->RegisterVariableBoolean("heating", "heating", "", 0);
+	IPS_LogMessage("NeoStat getNeoHubInstanceID", getNeoHubInstanceId());
 
       }
 	
@@ -22,6 +23,7 @@ class NeoStat extends IPSModule
 	{
 		//Never delete this line!
 		parent::ApplyChanges();
+		IPS_Log
 		
 	}
 	
@@ -31,5 +33,13 @@ class NeoStat extends IPSModule
 		
 	}
 
+		/**
+	 *		gets the instance id of the related bridge
+	 */
+	protected function getNeoHubInstanceId() 
+	{
+    		$NeoHubInstanceId = IPS_GetInstance($this->InstanceID);
+    		return ($NeoHubInstanceId['ConnectionID'] > 0) ? $NeoHubInstanceId['ConnectionID'] : false;
+  	}
 }
 ?>
