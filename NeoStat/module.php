@@ -23,7 +23,6 @@ class NeoStat extends IPSModule
 	{
 		//Never delete this line!
 		parent::ApplyChanges();
-		IPS_Log
 		
 	}
 	
