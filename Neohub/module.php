@@ -144,7 +144,7 @@ class Neohub extends IPSModule
 		$NeoStats = $NeohubJSON['devices'];
         	foreach($NeoStats as $NeoStat ) 
 		{
-        		if($NeoStat["device"] == "Wohnzimmer")
+        		if($NeoStat["device"] == $NeoHubUniqueId)
         		{
              			IPS_LogMessage("NeoStat:",$NeoStat["device"]);
                			IPS_LogMessage("NeoStat_temp:",$NeoStat["CURRENT_TEMPERATURE"]);
