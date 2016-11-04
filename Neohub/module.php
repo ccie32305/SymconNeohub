@@ -135,7 +135,7 @@ class Neohub extends IPSModule
 	*	Neohub_getStateOfNeoStat(string $NeoHubUniqueId)
 	*		retrieve infos for specific NeoStat
 	*/
-	private function updateNeoStat(string $NeoHubUniqueId)
+	public function updateNeoStat(string $NeoHubUniqueId)
 	{
 		$NeoHubJSON = $this->GetInfo();
 		$NeoStats = $NeohubJSON['devices'];
