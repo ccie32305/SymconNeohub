@@ -91,7 +91,7 @@ class Neohub extends IPSModule
 	    		if(IPS_GetInstance($NeoStatInstanceId)['ConnectionID'] == $NeohubInstanceId) {
 	      			$NeoStatUniqueId = IPS_GetProperty($NeoStatInstanceId, "NeoStatName");
 				IPS_LogMessage("$NeoStatUniqueId",$NeoStatUniqueId);
-				$this->updateNeoStat($NeoStatUniqueId);
+				$this->updateNeoStat($NeoStatUniqueId,$NeoStatInstanceId);
 			}
 		}
   	}
@@ -135,7 +135,7 @@ class Neohub extends IPSModule
 	*	Neohub_getStateOfNeoStat(string $NeoHubUniqueId)
 	*		retrieve infos for specific NeoStat
 	*/
-	public function updateNeoStat(string $NeoHubUniqueId)
+	public function updateNeoStat(string $NeoHubUniqueId, integer $NeoStatInstanceId)
 	{
 		       			IPS_LogMessage("updateNeoStat",$NeoHubUniqueId);
 		
