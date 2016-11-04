@@ -88,7 +88,8 @@ class Neohub extends IPSModule
 		$NeohubInstanceId = $this->InstanceID;
 		$NeoStatInstanceIds = IPS_GetInstanceListByModuleID($this->getNeoStatModuleGuid());
 		foreach($NeoStatInstanceIds as $NeoStatInstanceId) {
-	    		if(IPS_GetInstance($NeoStatInstanceId)['NeoStatName'] == $NeohubInstanceId) {
+			IPS_LogMessage("updateNeoStats()",IPS_GetInstance($NeoStatInstanceId)['ConnectionID');
+	    		if(IPS_GetInstance($NeoStatInstanceId)['ConnectionID'] == $NeohubInstanceId) {
 	      			$NeoStatUniqueId = IPS_GetProperty($NeoStatInstanceId, "NeoStatName");
 				$NeoStatData = $this->getStateOfNeoStat($NeoStatUniqueId);
 				$current_temperature = $NeoStatkData["current_temperature"];
@@ -133,6 +134,16 @@ class Neohub extends IPSModule
 		{
 			$this->SetStatus(202);
 		}
+	}
+	
+	############### private functions ###########
+	/**
+	*	Neohub_getStateOfNeoStat(string $NeoHubUniqueId)
+	*		retrieve infos for specific NeoStat
+	*/
+	private function getStateOfNeoStat(string $NeoHubUniqueId)
+	{
+		$NeoHubJSON = $this->GetInfo();
 	}
 	
 	############### private functions ###########
