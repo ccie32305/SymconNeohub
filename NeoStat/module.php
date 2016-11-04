@@ -1,4 +1,4 @@
-	<?
+<?
 // NeoStat Smart Thermostat Module
 class NeoStat extends IPSModule
 {
