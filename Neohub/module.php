@@ -87,7 +87,6 @@ class Neohub extends IPSModule
 	{
 		$NeohubInstanceId = $this->InstanceID;
 		$NeoStatInstanceIds = IPS_GetInstanceListByModuleID($this->getNeoStatModuleGuid());
-					IPS_LogMessage("$NeoStatInstanceIds",print_r($NeoStatInstanceIds));
 		foreach($NeoStatInstanceIds as $NeoStatInstanceId) {
 	    		if(IPS_GetInstance($NeoStatInstanceId)['ConnectionID'] == $NeohubInstanceId) {
 	      			$NeoStatUniqueId = IPS_GetProperty($NeoStatInstanceId, "NeoStatName");
