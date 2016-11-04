@@ -139,7 +139,7 @@ class Neohub extends IPSModule
 	{
 		       			IPS_LogMessage("updateNeoStat",$NeoHubUniqueId);
 		
-		$NeoHubJSON = Neohub_GetInfo();
+		$NeoHubJSON = $this->GetInfo();
 		/*
 		$NeoStats = $NeohubJSON['devices'];
         	foreach($NeoStats as $NeoStat ) 
@@ -159,12 +159,12 @@ class Neohub extends IPSModule
 	*/
 	}
 	
-	############### private functions ###########
+	############### public functions ###########
 	/**
 	*	Neohub_GetInfo()
 	*		retrieve {INFO:0} API Call from NeoHub
 	*/
-	private function GetInfo()
+	public function GetInfo()
 	{
 		$NeohubIP = $this->ReadPropertyString('NeohubIP');
 		$NeohubPort = $this->ReadPropertyString('NeohubPort');
