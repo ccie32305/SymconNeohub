@@ -152,7 +152,7 @@ class Neohub extends IPSModule
         	}
 		$current_temperature = $NeoStatData["current_temperature"];
 		$current_set_temperature = $NeoStatData["current_set_temperature"];
-		$NeoStatCurrentTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentTemperature", $NeoStatInstanceId);
+		$NeoStatCurrentTemperatureObjectId = IPS_GetObjectIDByIdent("CurrentTemperature", $NeoStatInstanceId);
 		$UpdateNeoStatCurrentTemperature = SetValue($NeoStatCurrentTemperatureObjectId, $current_temperature);
 		$NeoStatCurrentSetTemperatureObjectId = IPS_GetObjectIDByIdent("NeoStat_CurrentSetTemperature", $NeoStatInstanceId);
 		$UpdateNeoStatCurrentSetTemperature = SetValue($NeoStatCurrentSetTemperatureObjectId, $current_set_temperature);
