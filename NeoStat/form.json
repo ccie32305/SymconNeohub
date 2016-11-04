@@ -6,7 +6,7 @@
 	],
 	"actions":
 	[
-        	{ "type": "Button", "label": "Check availabiliy", "onClick": "NeoStat_AvailabilityCheck($name);" }
+        	{ "type": "Button", "label": "Check availabiliy", "onClick": "NeoStat_AvailabilityCheck($NeoStatName);" }
 	],
 	"status": 
 	[
