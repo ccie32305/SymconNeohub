@@ -139,7 +139,7 @@ class Neohub extends IPSModule
 	{
 		       			IPS_LogMessage("updateNeoStat",$NeoHubUniqueId);
 		
-		$NeoHubJSON = $this->GetInfo();
+		$NeohubJSON = $this->GetInfo();
 		
 		$NeoStats = $NeohubJSON['devices'];
         	foreach($NeoStats as $NeoStat ) 
