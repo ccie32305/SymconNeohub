@@ -148,8 +148,8 @@ class Neohub extends IPSModule
         		{
              			IPS_LogMessage("NeoStat:",$NeoStat["device"]);
                			IPS_LogMessage("NeoStat_temp:",$NeoStat["CURRENT_TEMPERATURE"]);
-				$current_temperature = $NeoStat["current_temperature"];
-				$current_set_temperature = $NeoStat["current_set_temperature"];
+				$current_temperature = $NeoStat["CURRENT_TEMPERATURE"];
+				$current_set_temperature = $NeoStat["CURRENT_SET_TEMPERATURE"];
        			}
         	}
 
