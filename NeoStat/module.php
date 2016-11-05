@@ -40,5 +40,21 @@ class NeoStat extends IPSModule
     		$NeoHubInstanceId = IPS_GetInstance($this->InstanceID);
     		return ($NeoHubInstanceId['ConnectionID'] > 0) ? $NeoHubInstanceId['ConnectionID'] : false;
   	}
+	
+	public function RequestAction($Ident, $Value) 
+	{
+ 
+	    switch($Ident) {
+		case "TestVariable":
+		    //Hier würde normalerweise eine Aktion z.B. das Schalten ausgeführt werden
+		    //Ausgaben über 'echo' werden an die Visualisierung zurückgeleitet
+
+		    //Neuen Wert in die Statusvariable schreiben
+		    SetValue($this->GetIDForIdent($Ident), $Value);
+		    break;
+		default:
+		    throw new Exception("Invalid Ident");
+	    }
+	}
 }
 ?>
