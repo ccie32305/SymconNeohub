@@ -169,7 +169,7 @@ class Neohub extends IPSModule
 	
 	############### public functions ###########
 	/**
-	*	Neohub_GetInfo()
+	*	   Neohub_GetInfo()
 	*		retrieve {INFO:0} API Call from NeoHub
 	*/
 	public function GetInfo()
