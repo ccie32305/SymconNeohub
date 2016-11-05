@@ -137,8 +137,9 @@ class Neohub extends IPSModule
 	*/
 	public function updateNeoStat(string $NeoHubUniqueId, integer $NeoStatInstanceId)
 	{
+		/*
 		       			IPS_LogMessage("updateNeoStat",$NeoHubUniqueId);
-		
+		*/
 		$NeohubJSON = $this->GetInfo();
 		
 		$NeoStats = $NeohubJSON['devices'];
@@ -146,10 +147,13 @@ class Neohub extends IPSModule
 		{
         		if($NeoStat["device"] == $NeoHubUniqueId)
         		{
+				/*
              			IPS_LogMessage("NeoStat:",$NeoStat["device"]);
                			IPS_LogMessage("NeoStat_temp:",$NeoStat["CURRENT_TEMPERATURE"]);
+				*/
 				$current_temperature = $NeoStat["CURRENT_TEMPERATURE"];
 				$current_set_temperature = $NeoStat["CURRENT_SET_TEMPERATURE"];
+				$heating = $NeoStat["HEATING"];
        			}
         	}
 
@@ -157,7 +161,8 @@ class Neohub extends IPSModule
 		$UpdateNeoStatCurrentTemperature = SetValue($NeoStatCurrentTemperatureObjectId, $current_temperature);
 		$NeoStatCurrentSetTemperatureObjectId = IPS_GetObjectIDByIdent("current_set_temperature", $NeoStatInstanceId);
 		$UpdateNeoStatCurrentSetTemperature = SetValue($NeoStatCurrentSetTemperatureObjectId, $current_set_temperature);
-	
+		$NeoStatHeatingObjectId = IPS_GetObjectIDByIdent("Heating", $NeoStatInstanceId);
+		$UpdateNeoStatHeating = SetValue($NeoStatHeatingObjectId, $heating);
 	}
 	
 	############### public functions ###########
