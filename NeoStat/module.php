@@ -15,7 +15,9 @@ class NeoStat extends IPSModule
 		 $this->RegisterVariableFloat("current_temperature", "Current Temperature");
 		 $this->RegisterVariableFloat("current_set_temperature", "Current Set Temperature");
 		 $this->RegisterVariableBoolean("heating", "Heating", "", 0);
+	    /*
 	IPS_LogMessage("NeoStat getNeoHubInstanceID", $this->getNeoHubInstanceId());
+	*/
 
       }
 	
