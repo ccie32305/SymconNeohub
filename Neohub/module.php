@@ -186,5 +186,19 @@ class Neohub extends IPSModule
 	        $NeohubJSON = str_replace("\u0022","\\\\\"",json_decode( $NeohubReply,JSON_HEX_QUOT));
 		return $NeohubJSON;
 	}
+		############### public functions ###########
+	/**
+	*	   Neohub_SetTemp()
+	*		set temperature
+	*/
+	public function SetTemp(integer $VariableID, integer $SetTemp)
+	{
+		$device = IPS_GetProperty($IPS_Parent($VariableID),"NeoStatName");
+		$NeohubData='{"SET TEMP":['.$SetTemp.'],['.$device.'}'.chr(0);
+		$NeohubSocket=@pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5);
+		@fputs($NeohubSocket,$NeohubData);
+		$NeohubReply=@fgets($NeohubSocket, 12);
+		@fclose($NeohubSocket);
+	}
 }
 ?>
