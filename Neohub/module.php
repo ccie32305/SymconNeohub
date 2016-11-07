@@ -191,7 +191,7 @@ class Neohub extends IPSModule
 	*	   Neohub_SetTemp()
 	*		set temperature
 	*/
-	public function SetTemp(integer $id,integer $VariableID, integer $SetTemp)
+	public function SetTemp(integer $VariableID, integer $SetTemp)
 	{
 		$device = IPS_GetProperty(IPS_Parent($VariableID),"NeoStatName");
 		$NeohubData='{"SET TEMP":['.$SetTemp.'],['.$device.'}'.chr(0);
