@@ -92,7 +92,9 @@ class Neohub extends IPSModule
 		foreach($NeoStatInstanceIds as $NeoStatInstanceId) {
 	    		if(IPS_GetInstance($NeoStatInstanceId)['ConnectionID'] == $NeohubInstanceId) {
 	      			$NeoStatUniqueId = IPS_GetProperty($NeoStatInstanceId, "NeoStatName");
+				/*
 				IPS_LogMessage("$NeoStatUniqueId",$NeoStatUniqueId);
+				*/
 				$this->updateNeoStat($NeoStatUniqueId,$NeoStatInstanceId);
 			}
 		}
@@ -176,8 +178,10 @@ class Neohub extends IPSModule
 	{
 		$NeohubIP = $this->ReadPropertyString('NeohubIP');
 		$NeohubPort = $this->ReadPropertyString('NeohubPort');
+		/*
 		IPS_LogMessage("Neohub", "IP:".$NeohubIP);
 		IPS_LogMessage("Neohub", "Port:".$NeohubPort);
+		*/
 		$NeohubData='{"INFO":0}'.chr(0);
 		$NeohubSocket=@pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5);
 		@fputs($NeohubSocket,$NeohubData);
@@ -193,7 +197,7 @@ class Neohub extends IPSModule
 	*/
 	public function SetTemp(integer $VariableID, integer $SetTemp)
 	{
-		$device = IPS_GetProperty(IPS_Parent($VariableID,"NeoStatName"));
+		$device = IPS_GetProperty(IPS_Parent($VariableID),"NeoStatName");
 		$NeohubData='{"SET TEMP":['.$SetTemp.'],['.$device.'}'.chr(0);
 		$NeohubSocket=@pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5);
 		@fputs($NeohubSocket,$NeohubData);
