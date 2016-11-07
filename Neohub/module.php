@@ -197,8 +197,11 @@ class Neohub extends IPSModule
 	*/
 	public function SetTemp(integer $VariableID, integer $SetTemp)
 	{
+		$NeohubIP = $this->ReadPropertyString('NeohubIP');
+		$NeohubPort = $this->ReadPropertyString('NeohubPort');
 		$device = IPS_GetProperty($VariableID,"NeoStatName");
 		$NeohubData='{"SET TEMP":['.$SetTemp.'],['.$device.'}'.chr(0);
+		IPS_LogMessage($VariableID,$NeohubData);
 		$NeohubSocket=@pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5);
 		@fputs($NeohubSocket,$NeohubData);
 		$NeohubReply=@fgets($NeohubSocket, 12);
