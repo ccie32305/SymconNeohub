@@ -202,21 +202,12 @@ class Neohub extends IPSModule
 		IPS_LogMessage("IP:",$NeohubIP);
 		IPS_LogMessage("1:",$SetTempID);
 		IPS_LogMessage("2:",$SetTemp);
-		IPS_LogMessage("4:",IPS_GetProperty($SetTempID,"NeoStatName"));
-		/*
-	
-	
-		IPS_LogMessage("1-VariableID:".$VariableID,$device);
-		IPS_LogMessage("2-id:",$SetTempID);
-		IPS_LogMessage("3-SetTemp:",$SetTemp);
-		IPS_LogMessage("4-dvice:",$SetTempDeviceDevice);		
-		$NeohubData='{"SET TEMP":['.$SetTemp.'],['.$device.'}]'.chr(0);
-		IPS_LogMessage($VariableID,$NeohubData);
+		IPS_LogMessage("4:","test");
+		$NeohubData='{"SET TEMP":['.$SetTemp.'],['.IPS_GetProperty($SetTempID,"NeoStatName").'}]'.chr(0);
 		$NeohubSocket=@pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5);
 		@fputs($NeohubSocket,$NeohubData);
 		$NeohubReply=@fgets($NeohubSocket, 12);
 		@fclose($NeohubSocket);
-		*/
 	}
 }
 ?>
