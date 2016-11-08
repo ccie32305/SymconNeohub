@@ -201,9 +201,9 @@ class Neohub extends IPSModule
 		$NeohubIP = $this->ReadPropertyString('NeohubIP');
 		$NeohubPort = $this->ReadPropertyString('NeohubPort');
 		$device = IPS_GetProperty(IPS_GetParent($VariableID),"NeoStatName");
-		IPS_LogMessage($VariableID,$device);
-		IPS_LogMessage($VariableID,$NeohubIP);
-		IPS_LogMessage($VariableID,$NeohubPort);
+		IPS_LogMessage("1:".$VariableID,$device);
+		IPS_LogMessage("2:".$id,$NeohubIP);
+		IPS_LogMessage("3:".$VariableID,$NeohubPort);
 		$NeohubData='{"SET TEMP":['.$SetTemp.'],['.$device.'}]'.chr(0);
 		IPS_LogMessage($VariableID,$NeohubData);
 		$NeohubSocket=@pfsockopen($NeohubIP,$NeohubPort, $errstr, $errno, 5);
