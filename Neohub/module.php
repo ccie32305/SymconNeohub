@@ -195,7 +195,7 @@ class Neohub extends IPSModule
 	*	   Neohub_SetTemp()
 	*		set temperature
 	*/
-	public function SetTemp(integer $SetTemp)
+	public function SetTemp(integer $id,integer $id2,integer $SetTemp)
 	{
 		
 		$NeohubIP = $this->ReadPropertyString('NeohubIP');
@@ -204,8 +204,8 @@ class Neohub extends IPSModule
 		$device = IPS_GetProperty(IPS_GetParent($VariableID),"NeoStatName");
 		*/
 		IPS_LogMessage("1-VariableID:".$VariableID,$device);
-		IPS_LogMessage("2-id:".$id,$NeohubIP);
-		IPS_LogMessage("3-VariableID:".$VariableID,$NeohubPort);
+		IPS_LogMessage("2-id1:".$id,$NeohubIP);
+		IPS_LogMessage("3-id2:".$id2,$NeohubPort);
 		IPS_LogMessage("4-SetTemp:",$SetTemp);
 		$NeohubData='{"SET TEMP":['.$SetTemp.'],['.$device.'}]'.chr(0);
 		IPS_LogMessage($VariableID,$NeohubData);
