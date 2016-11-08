@@ -195,7 +195,7 @@ class Neohub extends IPSModule
 	*	   Neohub_SetTemp()
 	*		set temperature
 	*/
-	public function SetTemp(integer $VariableID, integer $SetTemp)
+	public function SetTemp(integer $SetTemp)
 	{
 		
 		$NeohubIP = $this->ReadPropertyString('NeohubIP');
