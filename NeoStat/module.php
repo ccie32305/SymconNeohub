@@ -33,6 +33,11 @@ class NeoStat extends IPSModule
 		//Never delete this line!
 		
 	}
+	public function SetTemp(integer $setTemp)
+	{
+		//Never delete this line!
+		
+	}
 
 		/**
 	 *		gets the instance id of the related bridge
