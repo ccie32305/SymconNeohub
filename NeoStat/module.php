@@ -35,7 +35,8 @@ class NeoStat extends IPSModule
 	}
 	public function SetTemp(integer $setTemp)
 	{
-		//Never delete this line!
+		IPS_LogMessage("SetTemp",$setTemp);
+		Neohub_SetTemp("Wohnzimmer",$setTemp);
 		
 	}
 
