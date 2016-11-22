@@ -36,7 +36,7 @@ class NeoStat extends IPSModule
 	public function SetTemp(integer $setTemp)
 	{
 		IPS_LogMessage("NeoStatTemp-1:",$this->getNeoHubInstanceId());
-		IPS_LogMessage("NeoStatTemp-2:",$setTemp);
+		IPS_LogMessage("NeoStatTemp-2:",$this);
 		IPS_LogMessage("NeoStatTemp-3:",IPS_GetParent($this));
 		IPS_LogMessage("NeoStatTemp-4:",IPS_GetInstance(IPS_GetParent($this))['ConnectionID']);
 		IPS_LogMessage("NeoStatTemp-5:",$this);
