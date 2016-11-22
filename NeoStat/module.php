@@ -41,7 +41,7 @@ class NeoStat extends IPSModule
 		IPS_LogMessage("NeoStatTemp-4:",IPS_GetInstance($this->InstanceID)['ConnectionID']);
 		IPS_LogMessage("NeoStatTemp-5:",$this->InstanceID);
 		IPS_LogMessage("NeoStatTemp-6:",$_IPS['TARGET']);
-		Neohub_SetTemp(IPS_GetInstance(IPS_GetParent($id))['ConnectionID'],IPS_GetParent($id),$setTemp);
+		Neohub_SetTemp(IPS_GetInstance($this->InstanceID)['ConnectionID'],$this->InstanceID,$setTemp);
 	}
 
 		/**
