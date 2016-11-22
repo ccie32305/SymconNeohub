@@ -18,7 +18,19 @@ class NeoStat extends IPSModule
 	    /*
 	IPS_LogMessage("NeoStat getNeoHubInstanceID", $this->getNeoHubInstanceId());
 	*/
-
+	if (!IPS_VariableProfileExists("Neohub_Heating"))
+	{
+   		 IPS_CreateVariableProfile("Neohub_Heating", 0);
+		IPS_SetVariableCustomProfile(@IPS_GetVariableIDByName("heating", $this->InstanceID), "Neohub_Heating");
+	}
+	if (!IPS_VariableProfileExists("Neohub_Temp"))
+	{
+   		 IPS_CreateVariableProfile("Neohub_Temp", 0);
+	}
+	if (!IPS_VariableProfileExists("Neohub_SetTemp"))
+	{
+   		 IPS_CreateVariableProfile("Neohub_SetTemp", 0);
+	}
       }
 	
 	public function ApplyChanges()
