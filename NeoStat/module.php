@@ -33,7 +33,7 @@ class NeoStat extends IPSModule
 		//Never delete this line!
 		
 	}
-	public function SetTemp(integer $id integer $setTemp)
+	public function SetTemp(integer $id,integer $setTemp)
 	{
 		Neohub_SetTemp(IPS_GetInstance(IPS_GetParent($id))['ConnectionID'],IPS_GetParent($id),$setTemp);
 	}
