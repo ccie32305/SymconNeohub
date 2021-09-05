@@ -7,7 +7,7 @@
 		"NeoHub Hub"
 	],
 	"parentRequirements": [],
-	"childRequirements": ["{1b4d143d-9003-42c2-9262-0a02a3c28787}"],
+	"childRequirements": ["{1B4D143D-9003-42C2-9262-0A02A3C28787}"],
 	"implemented": ["{8a53a5ff-19b8-4f26-973e-dedc3921d49a}"],
 	"prefix": "Neohub"
 }
