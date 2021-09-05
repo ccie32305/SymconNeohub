@@ -77,7 +77,7 @@ class Neohub extends IPSModule
 	*/
 	private function getNeoStatModuleGuid()
 	{
-		return "{0584cfea-43dd-4df8-a46e-f3198ba3d29b}";
+		return "{0584CFEA-43DD-4DF8-A46E-F3198BA3D29B}";
 	}
 
         ########## public functions ##########
