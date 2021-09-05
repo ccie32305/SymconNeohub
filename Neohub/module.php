@@ -139,7 +139,7 @@ class Neohub extends IPSModule
 	*	Neohub_getStateOfNeoStat(string $NeoHubUniqueId)
 	*		retrieve infos for specific NeoStat
 	*/
-	public function updateNeoStat(string $NeoHubUniqueId, integer $NeoStatInstanceId)
+	public function updateNeoStat(string $NeoHubUniqueId, int $NeoStatInstanceId)
 	{
 		/*
 		       			IPS_LogMessage("updateNeoStat",$NeoHubUniqueId);
@@ -195,7 +195,7 @@ class Neohub extends IPSModule
 	*	   Neohub_SetTemp()
 	*		set temperature
 	*/
-	public function SetTemp(integer $SetTempID, integer $SetTemp)
+	public function SetTemp(int $SetTempID, int $SetTemp)
 	{
 		$NeohubIP = $this->ReadPropertyString('NeohubIP');
 		$NeohubPort = $this->ReadPropertyString('NeohubPort');
