@@ -4,7 +4,7 @@
 	"type": 3,
 	"vendor": "Heatmiser",
 	"aliases": ["Neo Stat Thermostat"],
-	"parentRequirements": ["{8a53a5ff-19b8-4f26-973e-dedc3921d49a}"],
+	"parentRequirements": ["{8A53A5FF-19B8-4F26-973E-DEDC3921D49A}"],
 	"childRequirements": [],
 	"implemented": ["{1B4D143D-9003-42C2-9262-0A02A3C28787}"],
 	"prefix": "NeoStat"
